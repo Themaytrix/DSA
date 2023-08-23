@@ -30,9 +30,18 @@ class LinkedList:
         """
         current = self.head
         count = 0
-        
+    
         while current:
             count += 1
             current= current.next_node
             
         return count
+    
+    def add(self,data):
+        """
+        Adds a new_node to the list as the head and assigns already existing node as the next node
+        takes 0(1) - constant time
+        """
+        new_node = Node(data)
+        new_node.next_node = self.head
+        self.head = new_node
