@@ -44,7 +44,7 @@ def merge(a,b,arr):
         k+=1
     
 
-data = [3,6,2,1,9,8]
+data = [3,6,2,1,9,8,0,0]
 test_case = [
     data,
     [],

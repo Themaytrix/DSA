@@ -42,8 +42,10 @@ def rec_binary_search(wordlist,key,low,high):
     else:
         return None
 
-data = [1,2,3,4,5,9,10,12]        
-print(rec_binary_search(data,4,0,len(data)-1))
+data = [1,2,3,4,5,9,10,12]  
+print(len(data))
+      
+# print(rec_binary_search(data,4,0,len(data)-1))
 
         
         
