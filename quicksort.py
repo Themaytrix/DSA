@@ -24,15 +24,20 @@ def partition(array,low,high):
     return j
             
         
-data = [10,6]
-test_case = [
-    [0],
-    [],
-    [8,2],
-    [5,10,66,24,14,2,3,1,88]
-]
-for r in test_case:
+# data = [10,6]
+# test_case = [
+#     [0],
+#     [],
+#     [8,2],
+#     [1,10,66,24,14,2,3,88],
+#     [1,10,4,8,2,3,5],
+#     [1,10,2,8,3,5],
     
-    print(quicksort(r,0,len(r)-1))
+# ]
+# for r in test_case:
+    
+#     print(quicksort(r,0,len(r)-1))
 
 # print(quicksort(data,0,len(data)-1))
+
+
