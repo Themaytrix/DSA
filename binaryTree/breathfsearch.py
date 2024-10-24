@@ -1,5 +1,6 @@
 from binarytree import Node
 
+
 a = Node('a')
 
 b = Node('b')

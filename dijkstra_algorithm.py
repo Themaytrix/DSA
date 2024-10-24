@@ -35,6 +35,8 @@ def lowest_cost_node(costs):
     return lowest_cost_node
 
 
+
+
 node = lowest_cost_node(costs)
 # while there is node to process
 while node is not None:
