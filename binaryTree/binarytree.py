@@ -135,40 +135,56 @@ def inversebt(root):
         inversebt(root.left)
         inversebt(root.right)
         
-def buildTree(preorder,inorder):
+def buildTree(preorder,inorder,ans):
     if not preorder or not inorder:
         return None
     
+    
     # set root to be intial node of preorder
     root = Node(preorder[0])
-    # find the mid element in the inorder tree i.e point that splits tree to left and right
-    root.left = buildTree()
+    # find the mid element in the inorder tree i.e point that splits tree to left and right we want the index
+    ans.append(root.value)
+    
+    print(ans)
+    mid = inorder.index(preorder[0])
+    root.left = buildTree(preorder[1:mid+1], inorder[:mid],ans)
+    
+    # print(root.value)
+    root.right = buildTree(preorder[mid+1:], inorder[mid+1:],ans)
+        
+    
+    # print(root.value)
+    return root
     
 
 
 
 if __name__ == "__main__":
     
-    root = Node('g')
-    root.insert('c')
-    root.insert('b')
-    root.insert('e')
-    root.insert('i')
-    root.insert('h')
-    root.insert('j')
-    root.insert('a')
-    root.insert('d')
-    root.insert('f')
-    root.insert('k')
+    # root = Node('g')
+    # root.insert('c')
+    # root.insert('b')
+    # root.insert('e')
+    # root.insert('i')
+    # root.insert('h')
+    # root.insert('j')
+    # root.insert('a')
+    # root.insert('d')
+    # root.insert('f')
+    # root.insert('k')
     
     
     
-    # make adjacency list
-    alist = makelist(root)
-    # for i in alist:
-    #     print(f"{i}:{d[i]}")
+    # # make adjacency list
+    # alist = makelist(root)
+    # # for i in alist:
+    # #     print(f"{i}:{d[i]}")
     
-    # print(bsf(root,alist))
-    visit =[]
-    print(stack_bfs_maxdpth(root))
-
+    # # print(bsf(root,alist))
+    # visit =[]
+    # print(stack_bfs_maxdpth(root))
+    ans = []
+    preorder = [3,9,20,15,7]
+    inorder = [9,3,15,20,7]
+    
+    buildTree(preorder,inorder,ans)
