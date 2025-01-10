@@ -42,10 +42,46 @@ def rec_binary_search(wordlist,key,low,high):
     else:
         return None
 
-data = [1,2,3,4,5,9,10,12]  
-print(len(data))
+data = [1,2,3,4,5,6,7,8,9]  
+# print(len(data))
       
 # print(rec_binary_search(data,4,0,len(data)-1))
 
+def find_combinations(arr, k, n):
+    def backtrack(start, path, target):
+        # Base case: when the path length is k and target is 0, we have a valid combination
+        if len(path) == k:
+            if target == 0:
+                results.append(path[:])
+            return
+        
+        # Iterate through the array to build combinations
+        for i in range(start, len(arr)):
+            # If the current element exceeds the target, stop (since the array is sorted)
+            if arr[i] > target:
+                break
+            
+            # Include the current element and recurse
+            path.append(arr[i])
+            backtrack(i + 1, path, target - arr[i])
+            path.pop()  # Backtrack by removing the last element
+
+    arr.sort()  # Ensure the array is sorted for binary-search-like logic
+    results = []
+    backtrack(0, [], n)
+    return results
+
+# Example usage
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+k = 2
+n = 8
+print(find_combinations(arr, k, n))
+
+
+        
+    
+        
+
         
         
+print(3//2)

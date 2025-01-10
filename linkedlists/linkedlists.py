@@ -29,7 +29,7 @@ def rectravel(head):
     # base case
     if head is None:
         return
-    print(head.val)
+    print("->".join(head.val))
     rectravel(head.next)
     
 rectravel(a)
